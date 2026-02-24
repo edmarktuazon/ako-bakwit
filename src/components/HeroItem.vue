@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import { supabase } from '../lib/supabaseClient'
+import { RouterLink } from 'vue-router'
 
 const props = defineProps({ buttonText: { type: String, default: 'Donate Now' } })
 
@@ -8,6 +9,7 @@ const heading = ref('Empowering Communities. Building Hope.')
 const description = ref('Ang kwento ng mga bakwit...')
 const bgImageUrl = ref('../assets/images/hero-bg.jpg')
 const buttonText = ref(props.buttonText)
+const buttonRoute = ref('/donation')
 
 async function fetchHeroData() {
   const { data, error } = await supabase.from('hero_settings').select('*').single()
@@ -77,8 +79,9 @@ onUnmounted(() => {
           </div>
 
           <div>
-            <button
-              class="group relative bg-brand-black text-white px-6 py-4 rounded-2xl font-normal font-brand cursor-pointer overflow-hidden transition-all duration-300 w-fit"
+            <RouterLink
+              :to="buttonRoute"
+              class="group relative bg-brand-black text-white px-6 py-4 rounded-2xl font-normal font-brand cursor-pointer overflow-hidden transition-all duration-300 w-fit inline-block"
             >
               <span
                 class="absolute inset-0 bg-white rounded-2xl scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-out"
@@ -102,7 +105,7 @@ onUnmounted(() => {
                   />
                 </svg>
               </span>
-            </button>
+            </RouterLink>
           </div>
         </div>
         <div class="hidden lg:flex"></div>
