@@ -1,23 +1,26 @@
 <script setup>
 import VolunteerItem from './VolunteerItem.vue'
+import JLBGLogo from '../assets/images/jollibee-group.png'
+import RAHPLogo from '../assets/images/rahp.png'
+import DSWDLogo from '../assets/images/dswd.png'
 </script>
 <template>
   <VolunteerItem
     :partners="[
       {
-        logo: '../assets/images/jollibee-group.png',
+        logo: JLBGLogo,
         alt: 'Jollibee Group',
         description:
           'Through its Food Aid Program, JGF has been instrumental in partnering with us to feed IDP shelters and IDP urban poor communities since the pandemic.',
       },
       {
-        logo: '../assets/images/rahp.png',
+        logo: RAHPLogo,
         alt: 'Rise Against Hunger Philippines',
         description:
           'Because of the RAHP Food Banking initiatives, we are able to distribute ready-to-eat, ready-to-cook meals to various calamity-stricken areas, IDP shelters, and urban poor communities.',
       },
       {
-        logo: '../assets/images/dswd.png',
+        logo: DSWDLogo,
         alt: 'DSWD',
         description:
           'The Department of Social Welfare and Development has been generous in accepting our recommendations to conduct feeding programs in various transitory shelters and urban poor communities.',
