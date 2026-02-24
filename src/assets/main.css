@@ -1,0 +1,87 @@
+@import 'tailwindcss';
+
+html {
+  scroll-behavior: smooth;
+}
+
+@theme {
+  --color-brand-purple: #943793;
+  --color-brand-black: #010101;
+  --color-alt: #6b21a8;
+  --color-brand-white-secondary: #f3f4f6;
+  --font-brand: 'Poppins', sans-serif;
+}
+
+/* text color */
+.text-brand-purple {
+  color: var(--color-brand-purple);
+}
+.text-brand-black {
+  color: var(--color-brand-black);
+}
+
+/* font  */
+.font-brand {
+  font-family: var(--font-brand);
+}
+
+/* background */
+.bg-brand-purple {
+  background-color: var(--color-brand-purple);
+}
+.bg-brand-black {
+  background-color: var(--color-brand-black);
+}
+.bg-brand-white-secondary {
+  background-color: var(--color-brand-white-secondary);
+}
+
+/* .bg-alt {
+  background-color: var(--color-alt);
+} */
+
+.hover\:bg-white:hover {
+  background-color: #ffffff;
+}
+
+.hero-heading {
+  font-size: clamp(1.75rem, 1.5rem + 4vw, 3.75rem);
+}
+
+.section-heading {
+  font-size: clamp(2.375rem, 1.5938rem + 2.5vw, 3rem);
+}
+
+@layer components {
+  .layout-wrapper {
+    @apply px-6 md:px-16 lg:px-10 xl:px-24 py-26;
+  }
+
+  .section-grid-cols-2 {
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-12;
+  }
+
+  .section-grid-cols-3 {
+    @apply grid grid-cols-1 lg:grid-cols-3 gap-12;
+  }
+
+  .section-grid-cols-3-mb {
+    @apply grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-12;
+  }
+
+  .hero-heading {
+    @apply text-white font-bold font-brand leading-tight;
+  }
+
+  .heading-underline {
+    @apply w-20 h-1.5 bg-brand-purple;
+  }
+
+  .heading-underline-black {
+    @apply w-20 h-1.5 bg-brand-black;
+  }
+
+  .section-heading {
+    @apply font-bold font-brand text-5xl mb-3;
+  }
+}
