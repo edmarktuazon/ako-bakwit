@@ -43,7 +43,7 @@ const socialLinks = [
   <NavbarContainer />
 
   <section
-    class="relative w-full h-64 md:h-116 bg-[url('../assets/images/hero-bg.jpg')] bg-center bg-no-repeat bg-cover flex items-end"
+    class="relative w-full h-64 md:h-116 bg-[url('../assets/images/contact-bg.jpg')] bg-center bg-no-repeat bg-cover flex items-end"
   >
     <div class="absolute inset-0 bg-linear-to-t from-brand-black to-brand-black/0"></div>
 
