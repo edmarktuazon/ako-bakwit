@@ -1,8 +1,8 @@
 <script setup>
 import VolunteerItem from './VolunteerItem.vue'
-import JLBGLogo from '../assets/images/jollibee-group.png'
-import RAHPLogo from '../assets/images/rahp.png'
-import DSWDLogo from '../assets/images/dswd.png'
+import JLBGLogo from '@/assets/images/jollibee-group.png'
+import RAHPLogo from '@/assets/images/rahp.png'
+import DSWDLogo from '@/assets/images/dswd.png'
 </script>
 <template>
   <VolunteerItem
