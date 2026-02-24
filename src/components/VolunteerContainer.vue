@@ -5,19 +5,19 @@ import VolunteerItem from './VolunteerItem.vue'
   <VolunteerItem
     :partners="[
       {
-        logo: '/src/assets/images/jollibee-group.png',
+        logo: '../assets/images/jollibee-group.png',
         alt: 'Jollibee Group',
         description:
           'Through its Food Aid Program, JGF has been instrumental in partnering with us to feed IDP shelters and IDP urban poor communities since the pandemic.',
       },
       {
-        logo: '/src/assets/images/rahp.png',
+        logo: '../assets/images/rahp.png',
         alt: 'Rise Against Hunger Philippines',
         description:
           'Because of the RAHP Food Banking initiatives, we are able to distribute ready-to-eat, ready-to-cook meals to various calamity-stricken areas, IDP shelters, and urban poor communities.',
       },
       {
-        logo: '/src/assets/images/dswd.png',
+        logo: '../assets/images/dswd.png',
         alt: 'DSWD',
         description:
           'The Department of Social Welfare and Development has been generous in accepting our recommendations to conduct feeding programs in various transitory shelters and urban poor communities.',
