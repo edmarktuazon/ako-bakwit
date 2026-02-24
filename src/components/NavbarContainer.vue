@@ -1,6 +1,7 @@
 <script setup>
 import BrandLogo from '../assets/images/brand-logo.png'
 import BrandLogoOnHover from '../assets/images/brand-logo-on-hover.png'
+import { RouterLink } from 'vue-router'
 import { ref, toRefs, onMounted, onUnmounted } from 'vue'
 
 const navData = ref({
@@ -48,12 +49,12 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
       <nav class="hidden md:block">
         <ul class="flex space-x-8">
           <li v-for="link in links" :key="link.label">
-            <a :href="link.href" class="relative text-white font-brand font-normal group">
+            <RouterLink :to="link.href" class="relative text-white font-brand font-normal group">
               {{ link.label }}
               <span
                 class="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-brand-purple group-hover:w-full transition-all duration-300"
               />
-            </a>
+            </RouterLink>
           </li>
         </ul>
       </nav>
@@ -123,16 +124,16 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
                 transition: 'opacity 0.3s ease, transform 0.3s ease',
               }"
             >
-              <a
-                :href="link.href"
-                class="relative text-white font-brand text-3xl font-normal group hover:text-brand-purple transition-colors duration-300"
+              <RouterLink
+                :to="link.href"
                 @click="toggleMenu"
+                class="relative text-white font-brand text-3xl font-normal group hover:text-brand-purple transition-colors duration-300"
               >
                 {{ link.label }}
                 <span
                   class="absolute -bottom-0.5 left-0 w-0 h-px bg-brand-purple group-hover:w-full transition-all duration-300"
                 />
-              </a>
+              </RouterLink>
             </li>
           </ul>
         </nav>
