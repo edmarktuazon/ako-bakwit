@@ -46,7 +46,7 @@ const donationChannels = [
     class="relative w-full h-64 md:h-116 bg-[url('../assets/images/donation-bg.jpg')] bg-center bg-no-repeat bg-cover flex items-end"
   >
     <div class="absolute inset-0 bg-linear-to-t from-brand-black to-brand-black/0"></div>
-    <div class="layout-wrapper relative z-10 pb-10">
+    <div class="layout-wrapper relative z-10 pb-3 lg:pb-10">
       <div class="flex items-center gap-2 mb-3">
         <a
           href="/"

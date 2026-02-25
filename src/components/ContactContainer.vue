@@ -90,7 +90,7 @@ const socialLinks = [
             <h2 class="text-4xl leading-snug font-bold font-brand text-white mb-2">
               Start the Conversation
             </h2>
-            <p class="text-white font-brand text-sm leading-relaxed max-w-xs">
+            <p class="text-white font-brand text-sm leading-relaxed max-w-xs text-justify">
               Have questions or want to get involved? Reach out to us through any of the channels
               below.
             </p>
@@ -132,7 +132,7 @@ const socialLinks = [
               Leave Us a Message
             </h2>
             <div class="heading-underline"></div>
-            <p class="text-gray-500 font-brand text-sm leading-relaxed mt-8">
+            <p class="text-gray-500 font-brand text-sm leading-relaxed mt-8 text-justify">
               Feel free to reach out to us anytime. We'd love to hear from you and will respond at
               our earliest convenience.
             </p>

@@ -21,7 +21,6 @@ const subImageUrl01 = ref(aboutSubImgModel01)
 const subImageUrl02 = ref(aboutSubImgModel02)
 const subImageUrl03 = ref(aboutSubImgModel03)
 
-
 async function fetchAboutData() {
   const { data, error } = await supabase.from('about_settings').select('*').maybeSingle()
 
@@ -33,8 +32,6 @@ async function fetchAboutData() {
     subImageUrl01.value = data.sub_image_url
     subImageUrl02.value = data.sub_image_url
     subImageUrl03.value = data.sub_image_url
-
-
       ? `${data.sub_image_url}?v=${Date.now()}`
       : (subImageUrl.value, subImageUrl01, subImageUrl02, subImageUrl03)
   }
@@ -97,7 +94,9 @@ onUnmounted(() => {
           >
             Who We Are
           </h3>
-          <p class="text-brand-black text-base font-brand leading-relaxed w-4/5">
+          <p
+            class="text-brand-black text-base font-brand leading-relaxed w-full lg:w-4/5 text-justify"
+          >
             {{ whoWeAre }}
           </p>
         </div>
@@ -111,7 +110,9 @@ onUnmounted(() => {
           >
             Our Vision
           </h3>
-          <p class="text-brand-black text-base font-brand leading-relaxed w-4/5">
+          <p
+            class="text-brand-black text-base font-brand leading-relaxed w-full lg:w-4/5 text-justify"
+          >
             {{ ourVision }}
           </p>
         </div>
@@ -125,14 +126,17 @@ onUnmounted(() => {
           >
             Our Mission
           </h3>
-          <p class="text-brand-black text-base font-brand leading-relaxed w-4/5">
+          <p
+            class="text-brand-black text-base font-brand leading-relaxed w-full lg:w-4/5 text-justify"
+          >
             {{ ourMission }}
           </p>
         </div>
 
-        <!-- SEC and BIR (static for now, editable later if needed) -->
         <div class="mt-8">
-          <div class="flex flex-col gap-6 bg-brand-purple/10 p-6 rounded-lg w-full lg:w-[20rem]">
+          <div
+            class="flex flex-col gap-6 bg-brand-purple/10 p-10 lg:p-6 rounded-lg w-full lg:w-[20rem]"
+          >
             <div class="flex items-start gap-4">
               <div>
                 <p
@@ -165,20 +169,39 @@ onUnmounted(() => {
       </div>
 
       <!-- About Sub Image -->
+      <div class="grid grid-cols-2 gap-4 place-content-center">
+        <img
+          :src="subImageUrl01"
+          class="aspect-3/2 object-cover rounded-xl w-full"
+          data-aos="zoom-out"
+          data-aos-easing="ease-in"
+          data-aos-delay="100"
+          alt="About Sub Model Img"
+        />
+        <img
+          :src="subImageUrl02"
+          class="aspect-3/2 object-cover rounded-xl w-full"
+          data-aos="zoom-out"
+          data-aos-easing="ease-in"
+          data-aos-delay="300"
+          alt="About Sub Model Img"
+        />
 
-    <div class="grid grid-cols-2 grid-rows-1 gap-4 h-[535px]">
-
-    <img :src="subImageUrl01" class="h-[180px] aspect-3/2 object-cover rounded-xl" alt="About Sub Model Img">
-      <img :src="subImageUrl02" class="h-[180px] aspect-3/2 object-cover rounded-xl" alt="About Sub Model Img">
-
-      <div class="col-span-2 row-start-2 mx-auto">
-        <img :src="subImageUrl03" class="h-[260px] aspect-3/2 object-cover rounded-xl" alt="About Sub Model Img">
+        <div class="col-span-2 flex justify-center">
+          <img
+            :src="subImageUrl03"
+            class="aspect-3/2 object-cover rounded-xl w-full md:w-1/2"
+            data-aos="zoom-out"
+            data-aos-easing="ease-in"
+            data-aos-delay="500"
+            alt="About Sub Model Img"
+          />
+        </div>
       </div>
-    </div>
 
-      <div>
+      <!-- <div>
         <img :src="subImageUrl" class="object-cover" alt="About Ako Bakwit Model" />
-      </div>
+      </div> -->
     </div>
   </section>
 </template>

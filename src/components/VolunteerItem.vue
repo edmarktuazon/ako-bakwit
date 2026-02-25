@@ -22,7 +22,7 @@ defineProps({
           <slot name="section-heading"></slot>
         </h2>
         <p
-          class="text-white font-brand text-lg lg:text-base leading-relaxed max-w-4xl mx-auto text-center"
+          class="text-white font-brand text-lg lg:text-base leading-relaxed max-w-4xl mx-auto text-justify"
         >
           <slot name="sub-description"></slot>
         </p>
@@ -32,7 +32,7 @@ defineProps({
         <div
           v-for="partner in partners"
           :key="partner.alt"
-          class="bg-white/30 p-6 flex flex-col gap-4 rounded-lg flex-1 min-h-100"
+          class="bg-white/30 p-6 flex flex-col gap-4 rounded-lg flex-1 h-auto lg:min-h-100"
           data-aos="flip-left"
           data-aos-delay="300"
         >
@@ -40,7 +40,7 @@ defineProps({
             <img :src="partner.logo" :alt="partner.alt" class="h-16 w-auto object-contain" />
           </div>
 
-          <p class="text-white text-center font-brand text-base leading-relaxed">
+          <p class="text-white font-brand text-base leading-relaxed text-justify">
             {{ partner.description }}
           </p>
         </div>

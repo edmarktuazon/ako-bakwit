@@ -7,6 +7,9 @@ import './assets/main.css'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
+import 'swiper/css'
+import 'swiper/css/pagination'
+
 const app = createApp(App)
 
 AOS.init({

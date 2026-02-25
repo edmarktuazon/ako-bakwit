@@ -17,7 +17,7 @@ const routes = [
     name: 'contact',
     component: () => import('../views/ContactView.vue'),
     meta: {
-      title: 'Contact Us | Ako Bakwit, Inc.',
+      title: 'Contact Us',
       description:
         'Get in touch with Ako Bakwit Inc. Reach out to volunteer, donate, or partner with us in empowering displaced communities.',
     },
@@ -27,7 +27,7 @@ const routes = [
     name: 'donation',
     component: () => import('../views/DonationView.vue'),
     meta: {
-      title: 'Donation | Ako Bakwit, Inc.',
+      title: 'Donation',
       description:
         'Support Ako Bakwit Inc. by donating through GCash, BDO, BPI, or PayPal. Every peso helps displaced families across the Philippines.',
     },

@@ -75,7 +75,7 @@ onUnmounted(() => {
           <h2 class="section-heading text-brand-black">Education</h2>
           <div class="heading-underline"></div>
         </div>
-        <p class="text-brand-black text-base font-brand leading-relaxed mb-16">
+        <p class="text-brand-black text-base font-brand leading-relaxed mb-16 text-justify">
           <strong>Ako Bakwit</strong> believes education is key to reducing poverty and promoting
           peace
         </p>
@@ -91,7 +91,7 @@ onUnmounted(() => {
               <li
                 v-for="partner in majorPartners.slice(0, Math.ceil(majorPartners.length / 2))"
                 :key="partner"
-                class="text-brand-black font-brand text-base leading-snug"
+                class="text-brand-black font-brand text-base leading-snug text-justify"
                 data-aos="fade-in"
                 data-aos-delay="300"
               >
@@ -103,7 +103,7 @@ onUnmounted(() => {
               <li
                 v-for="partner in majorPartners.slice(Math.ceil(majorPartners.length / 2))"
                 :key="partner"
-                class="text-brand-black font-brand text-base leading-snug"
+                class="text-brand-black font-brand text-base leading-snug text-justify"
                 data-aos="fade-in"
                 data-aos-delay="300"
               >
@@ -120,8 +120,7 @@ onUnmounted(() => {
       >
         <div class="absolute inset-0 bg-linear-to-t from-brand-black to-brand-black/0"></div>
 
-        <!-- What We Offer? – Static pa rin tulad ng request mo -->
-        <div class="absolute bottom-10 left-0 md:left-10 xl:left-16 p-6 space-y-4">
+        <div class="absolute bottom-10 left-0 md:left-10 xl:left-16 p-6 lg:p-0 space-y-4">
           <div class="bg-brand-purple p-6">
             <h3 class="text-white font-bold font-brand text-3xl lg:text-4xl tracking-wide">
               WHAT WE OFFER?

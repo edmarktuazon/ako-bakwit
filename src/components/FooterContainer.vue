@@ -23,7 +23,7 @@ const quickLinks = [
         <div class="flex flex-col gap-5">
           <img :src="BrandLogo" alt="Ako Bakwit Logo" class="w-20 h-20" />
           <div class="w-4/5">
-            <p class="text-gray-500 font-brand text-sm leading-relaxed">
+            <p class="text-gray-500 font-brand text-sm leading-relaxed text-justify">
               Ang kwento ng mga bakwit ay kwento rin ng bawat Pilipino — isang salamin ng ating
               pagkakaisa, pag-asa, at katatagan.
             </p>

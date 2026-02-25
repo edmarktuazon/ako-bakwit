@@ -11,8 +11,8 @@
       <div
         class="relative min-h-[70dvh] w-full bg-[url('../assets/images/advocacy-sub-bg.png')] bg-center bg-no-repeat bg-cover"
       >
-        <div class="absolute bottom-0 left-0 p-6 lg:p-12 bg-brand-black/60">
-          <p class="text-white font-brand font-bold text-xl lg:text-2xl leading-snug">
+        <div class="absolute bottom-0 left-0 p-10 lg:p-12 bg-brand-black/60">
+          <p class="text-white font-brand font-bold text-xl lg:text-2xl leading-snug text-justify">
             <slot name="sub-description-overlay"></slot>
           </p>
         </div>
@@ -24,8 +24,8 @@
             <slot name="advocacy-policy-model-img-01"></slot>
             <slot name="advocacy-policy-model-img-02"></slot>
           </div>
-          <div class="p-6">
-            <p class="text-white font-brand font-semibold text-3xl leading-snug">
+          <div class="p-10 lg:p-12">
+            <p class="text-white font-brand font-semibold text-3xl leading-snug text-justify">
               <slot name="sub-description"></slot>
             </p>
           </div>

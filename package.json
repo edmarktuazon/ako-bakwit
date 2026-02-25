@@ -17,6 +17,7 @@
     "@tailwindcss/vite": "^4.2.0",
     "aos": "^2.3.4",
     "resend": "^6.9.2",
+    "swiper": "^12.1.2",
     "tailwindcss": "^4.2.0",
     "vue": "beta",
     "vue-router": "^5.0.2"
