@@ -32,7 +32,7 @@ defineProps({
         <div
           v-for="partner in partners"
           :key="partner.alt"
-          class="bg-white/30 p-6 flex flex-col gap-4 rounded-lg flex-1 h-100"
+          class="bg-white/30 p-6 flex flex-col gap-4 rounded-lg flex-1 min-h-100"
           data-aos="flip-left"
           data-aos-delay="300"
         >
