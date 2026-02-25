@@ -11,7 +11,7 @@
           <div class="heading-underline"></div>
         </div>
 
-        <div class="flex flex-col w-4/5">
+        <div class="flex flex-col w-full lg:w-4/5">
           <p class="text-brand-black font-brand leading-relaxed text-base">
             <slot name="sub-description-01"></slot>
           </p>
