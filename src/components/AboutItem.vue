@@ -1,5 +1,9 @@
 <script setup>
 import aboutDefaultImgModel from '../assets/images/about-sub-img-model.png'
+import aboutSubImgModel01 from '../assets/images/about-sub-img-model-01.jpg'
+import aboutSubImgModel02 from '../assets/images/about-sub-img-model-02.jpg'
+import aboutSubImgModel03 from '../assets/images/about-sub-img-model-03.jpg'
+
 import { ref, onMounted, onUnmounted } from 'vue'
 import { supabase } from '../lib/supabaseClient'
 
@@ -13,6 +17,10 @@ const ourMission = ref(
   'To provide education, hunger relief, and sustainable livelihood opportunities for displaced families, while advocating for their rights and needs.',
 )
 const subImageUrl = ref(aboutDefaultImgModel)
+const subImageUrl01 = ref(aboutSubImgModel01)
+const subImageUrl02 = ref(aboutSubImgModel02)
+const subImageUrl03 = ref(aboutSubImgModel03)
+
 
 async function fetchAboutData() {
   const { data, error } = await supabase.from('about_settings').select('*').maybeSingle()
@@ -22,8 +30,13 @@ async function fetchAboutData() {
     ourVision.value = data.our_vision || ourVision.value
     ourMission.value = data.our_mission || ourMission.value
     subImageUrl.value = data.sub_image_url
+    subImageUrl01.value = data.sub_image_url
+    subImageUrl02.value = data.sub_image_url
+    subImageUrl03.value = data.sub_image_url
+
+
       ? `${data.sub_image_url}?v=${Date.now()}`
-      : subImageUrl.value
+      : (subImageUrl.value, subImageUrl01, subImageUrl02, subImageUrl03)
   }
 }
 
@@ -152,6 +165,17 @@ onUnmounted(() => {
       </div>
 
       <!-- About Sub Image -->
+
+    <div class="grid grid-cols-2 grid-rows-1 gap-4 h-[535px]">
+
+    <img :src="subImageUrl01" class="h-[180px] aspect-3/2 object-cover rounded-xl" alt="About Sub Model Img">
+      <img :src="subImageUrl02" class="h-[180px] aspect-3/2 object-cover rounded-xl" alt="About Sub Model Img">
+
+      <div class="col-span-2 row-start-2 mx-auto">
+        <img :src="subImageUrl03" class="h-[260px] aspect-3/2 object-cover rounded-xl" alt="About Sub Model Img">
+      </div>
+    </div>
+
       <div>
         <img :src="subImageUrl" class="object-cover" alt="About Ako Bakwit Model" />
       </div>
