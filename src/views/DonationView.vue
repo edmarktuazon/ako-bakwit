@@ -3,7 +3,7 @@ import NavbarContainer from '../components/NavbarContainer.vue'
 import FooterContainer from '../components/FooterContainer.vue'
 import { ref } from 'vue'
 
-const suggestedAmounts = [100, 250, 500, 1000, 2500, 5000]
+const suggestedAmounts = [20, 50, 100, 250, 500, 1000, 2500, 5000]
 const selectedAmount = ref(null)
 
 const selectAmount = (amount) => {
@@ -88,7 +88,7 @@ const donationChannels = [
 
         <!-- Right Side -->
         <div
-          class="bg-white w-full lg:w-155 shadow-sm border border-gray-100 rounded-2xl overflow-hidden"
+          class="bg-white w-full xl:w-155 shadow-sm border border-gray-100 rounded-2xl overflow-hidden"
           data-aos="fade-up"
         >
           <!--Choose Amount -->
