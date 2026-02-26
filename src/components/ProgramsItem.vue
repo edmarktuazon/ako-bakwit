@@ -35,15 +35,16 @@ const swiperBreakpoints = {
 
 <template>
   <section class="layout-wrapper bg-brand-purple" id="programs">
-    <div class="section-grid-cols-2">
-      <!-- Left Column -->
-      <div class="row-end-3 lg:row-end-auto">
-        <div class="mb-16">
+    <div class="mb-16">
           <h2 class="section-heading text-white">
             <slot name="section-heading"></slot>
           </h2>
           <div class="heading-underline-black"></div>
         </div>
+    <div class="section-grid-cols-2">
+      <!-- Left Column -->
+      <div class="row-end-3 lg:row-end-auto">
+
 
         <div class="flex flex-col bg-brand-black p-10 lg:p-12">
           <h3

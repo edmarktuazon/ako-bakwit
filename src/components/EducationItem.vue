@@ -69,13 +69,14 @@ onUnmounted(() => {
 
 <template>
   <section class="w-full py-26" id="education">
-    <div class="section-grid-cols-2">
-      <div class="row-end-3 lg:row-end-auto pl-6 md:pl-14 xl:pl-24">
-        <div class="mb-4">
+      <div class="mb-16 pl-6 md:pl-14 xl:pl-24">
           <h2 class="section-heading text-brand-black">Education</h2>
           <div class="heading-underline"></div>
         </div>
-        <p class="text-brand-black text-base font-brand leading-relaxed mb-16 text-justify">
+    <div class="section-grid-cols-2">
+      <div class="row-end-3 lg:row-end-auto pl-6 md:pl-14 xl:pl-24">
+
+        <p class="text-brand-black text-base font-brand leading-relaxed mb-16 ">
           <strong>Ako Bakwit</strong> believes education is key to reducing poverty and promoting
           peace
         </p>
@@ -91,7 +92,7 @@ onUnmounted(() => {
               <li
                 v-for="partner in majorPartners.slice(0, Math.ceil(majorPartners.length / 2))"
                 :key="partner"
-                class="text-brand-black font-brand text-base leading-snug text-justify"
+                class="text-brand-black font-brand text-base leading-snug"
                 data-aos="fade-in"
                 data-aos-delay="300"
               >
@@ -103,7 +104,7 @@ onUnmounted(() => {
               <li
                 v-for="partner in majorPartners.slice(Math.ceil(majorPartners.length / 2))"
                 :key="partner"
-                class="text-brand-black font-brand text-base leading-snug text-justify"
+                class="text-brand-black font-brand text-base leading-snug"
                 data-aos="fade-in"
                 data-aos-delay="300"
               >

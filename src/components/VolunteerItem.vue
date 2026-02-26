@@ -22,7 +22,7 @@ defineProps({
           <slot name="section-heading"></slot>
         </h2>
         <p
-          class="text-white font-brand text-lg lg:text-base leading-relaxed max-w-4xl mx-auto text-justify"
+          class="text-white font-brand text-lg lg:text-base leading-relaxed max-w-4xl mx-auto text-center"
         >
           <slot name="sub-description"></slot>
         </p>
@@ -40,7 +40,7 @@ defineProps({
             <img :src="partner.logo" :alt="partner.alt" class="h-16 w-auto object-contain" />
           </div>
 
-          <p class="text-white font-brand text-base leading-relaxed text-justify">
+          <p class="text-white font-brand text-base leading-relaxed text-center">
             {{ partner.description }}
           </p>
         </div>

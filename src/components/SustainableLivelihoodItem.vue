@@ -2,16 +2,17 @@
 
 <template>
   <section class="layout-wrapper bg-brand-white-secondary" id="sustainable-livelihood">
-    <div class="grid lg:grid-cols-2 gap-8 items-start">
-      <!-- Title -->
-      <div class="col-span-full lg:col-span-2 mb-4">
+          <div class="mb-16 col-span-full lg:col-span-2">
         <h2 class="section-heading text-brand-black leading-snug">
           <slot name="section-heading"></slot>
         </h2>
         <div class="heading-underline"></div>
       </div>
+    <div class="section-grid-cols-2 items-start">
 
-      <div class="flex flex-col w-full lg:w-4/5">
+
+
+      <div class="flex flex-col">
         <p class="text-brand-black font-brand leading-relaxed text-base text-justify">
           <slot name="sub-description-01"></slot>
         </p>

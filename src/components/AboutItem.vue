@@ -78,12 +78,14 @@ onUnmounted(() => {
 
 <template>
   <section class="min-h-dvh layout-wrapper" id="about">
-    <div class="section-grid-cols-2">
-      <div class="row-end-3 lg:row-end-auto">
-        <div class="mb-16">
+    <div class="mb-16">
           <h2 class="section-heading text-brand-black">About Us</h2>
           <div class="heading-underline"></div>
         </div>
+    <div class="section-grid-cols-2">
+
+      <div class="row-end-3 lg:row-end-auto">
+
 
         <!-- Who We Are -->
         <div class="mb-8">
@@ -190,7 +192,7 @@ onUnmounted(() => {
         <div class="col-span-2 flex justify-center">
           <img
             :src="subImageUrl03"
-            class="aspect-3/2 object-cover rounded-xl w-full md:w-1/2"
+            class="aspect-3/2 object-cover rounded-xl w-full 2xl:w-1/2"
             data-aos="zoom-out"
             data-aos-easing="ease-in"
             data-aos-delay="500"
