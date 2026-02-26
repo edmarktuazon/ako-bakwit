@@ -196,14 +196,16 @@ onUnmounted(() => {
           />
         </div>
 
-        <div class="col-span-2 flex justify-center overflow-hidden rounded-xl">
+        <div
+          class="col-span-2 w-1/2 justify-center mx-auto overflow-hidden rounded-xl shadow-lg aspect-3/2"
+          data-aos="zoom-out"
+          data-aos-easing="ease-in"
+          data-aos-delay="300"
+        >
           <img
             :src="subImageUrl03"
-            class="aspect-3/2 rounded-xl w-full object-cover transition hover:scale-105 duration-300 2xl:w-1/2"
-            data-aos="zoom-out"
-            data-aos-easing="ease-in"
-            data-aos-delay="500"
-            alt="About Sub Model Img"
+            alt="Activity 3"
+            class="w-full h-full object-cover transition hover:scale-105 duration-300"
             loading="lazy"
           />
         </div>
