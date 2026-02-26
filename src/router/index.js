@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import { supabase } from '../lib/supabaseClient'
+
 const routes = [
   {
     path: '/',
@@ -57,12 +58,31 @@ const routes = [
     path: '/:pathMatch(.*)*',
     name: 'not-found',
     component: () => import('../views/404View.vue'),
+    meta: {
+      title: 'Page Not Found',
+      description: 'The page you are looking for could not be found.',
+    },
   },
 ]
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
+  scrollBehavior(to, _from, _savedPosition) {
+    if (to.hash) {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve({
+            el: to.hash,
+            top: 80,
+            behavior: 'smooth',
+          })
+        }, 300)
+      })
+    }
+
+    return { top: 0, behavior: 'smooth' }
+  },
 })
 
 router.beforeEach(async (to) => {

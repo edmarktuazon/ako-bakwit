@@ -79,14 +79,11 @@ onUnmounted(() => {
 <template>
   <section class="min-h-dvh layout-wrapper" id="about">
     <div class="mb-16">
-          <h2 class="section-heading text-brand-black">About Us</h2>
-          <div class="heading-underline"></div>
-        </div>
+      <h2 class="section-heading text-brand-black">About Us</h2>
+      <div class="heading-underline"></div>
+    </div>
     <div class="section-grid-cols-2">
-
       <div class="row-end-3 lg:row-end-auto">
-
-
         <!-- Who We Are -->
         <div class="mb-8">
           <h3
@@ -172,31 +169,42 @@ onUnmounted(() => {
 
       <!-- About Sub Image -->
       <div class="grid grid-cols-2 gap-4 place-content-center">
-        <img
-          :src="subImageUrl01"
-          class="aspect-3/2 object-cover rounded-xl w-full"
+        <div
+          class="overflow-hidden rounded-xl shadow-lg aspect-3/2 flex"
           data-aos="zoom-out"
           data-aos-easing="ease-in"
           data-aos-delay="100"
-          alt="About Sub Model Img"
-        />
-        <img
-          :src="subImageUrl02"
-          class="aspect-3/2 object-cover rounded-xl w-full"
+        >
+          <img
+            :src="subImageUrl01"
+            alt="Activity 3"
+            class="w-full h-full object-cover transition hover:scale-105 duration-300"
+            loading="lazy"
+          />
+        </div>
+        <div
+          class="overflow-hidden rounded-xl shadow-lg aspect-3/2 flex"
           data-aos="zoom-out"
           data-aos-easing="ease-in"
           data-aos-delay="300"
-          alt="About Sub Model Img"
-        />
+        >
+          <img
+            :src="subImageUrl02"
+            alt="Activity 3"
+            class="w-full h-full object-cover transition hover:scale-105 duration-300"
+            loading="lazy"
+          />
+        </div>
 
-        <div class="col-span-2 flex justify-center">
+        <div class="col-span-2 flex justify-center overflow-hidden rounded-xl">
           <img
             :src="subImageUrl03"
-            class="aspect-3/2 object-cover rounded-xl w-full 2xl:w-1/2"
+            class="aspect-3/2 rounded-xl w-full object-cover transition hover:scale-105 duration-300 2xl:w-1/2"
             data-aos="zoom-out"
             data-aos-easing="ease-in"
             data-aos-delay="500"
             alt="About Sub Model Img"
+            loading="lazy"
           />
         </div>
       </div>

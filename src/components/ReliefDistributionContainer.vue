@@ -6,10 +6,12 @@ import ReliefDistributionModel02 from '../assets/images/relief-distribution-sub-
 <template>
   <ReliefDistributionItem>
     <template #sub-description>
-      <span class="underline" data-aos="fade-in" data-aos-delay="300">Relief Distribution</span>
-      during a calamity is a critical, time-sensitive operation that involves mobilizing resources,
-      coordinating with local authorities, and delivering essential supplies—food, water, hygiene
-      kits, and shelter materials—to affected communities as quickly and safely as possible.
+      <span class="underline" data-aos="fade-in" data-aos-delay="300"
+        >Relief Distribution <br />
+        Partner: BDO Foundation</span
+      >. During a calamity is a critical, time-sensitive operation that involves mobilizing
+      resources, coordinating with local authorities, and delivering essential supplies—food, water,
+      hygiene kits, and shelter materials—to affected communities as quickly and safely as possible.
     </template>
     <template #relief-distribution-sub-model-img-01>
       <img

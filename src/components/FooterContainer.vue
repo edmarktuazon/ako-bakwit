@@ -1,16 +1,15 @@
-<!-- FooterItem.vue -->
 <script setup>
 import BrandLogo from '../assets/images/brand-logo.png'
 
 const quickLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'About Us', href: '#about' },
-  { label: 'Our Programs', href: '#programs' },
-  { label: 'Education', href: '#education' },
-  { label: 'Volunteer', href: '#volunteer' },
-  { label: 'Sustainable Livelihood', href: '#sustainable-livelihood' },
-  { label: 'Relief Distribution', href: '#relief-distribution' },
-  { label: 'Policy Advocacy', href: '#policy-advocacy' },
+  { label: 'Home', href: '/' },
+  { label: 'About Us', href: '/#about' },
+  { label: 'Our Programs', href: '/#programs' },
+  { label: 'Education', href: '/#education' },
+  { label: 'Volunteer', href: '/#volunteer' },
+  { label: 'Sustainable Livelihood', href: '/#sustainable-livelihood' },
+  { label: 'Relief Distribution', href: '/#relief-distribution' },
+  { label: 'Policy Advocacy', href: '/#policy-advocacy' },
   { label: 'Donation', href: '/donation' },
   { label: 'Contact Us', href: '/contact' },
 ]

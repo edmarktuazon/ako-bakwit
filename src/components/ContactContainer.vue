@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { createClient } from '@supabase/supabase-js'
 
 const supabase = createClient(
@@ -13,23 +13,99 @@ const form = ref({
   message: '',
 })
 
+const errors = ref({
+  name: '',
+  email: '',
+  message: '',
+})
+
 const isLoading = ref(false)
 const isSuccess = ref(false)
-const isError = ref(false)
+const isServerError = ref(false)
 
+// Validation
+const validateName = () => {
+  const trimmed = form.value.name.trim()
+  if (!trimmed) {
+    errors.value.name = 'Name is required'
+    return false
+  }
+  if (trimmed.length < 2) {
+    errors.value.name = 'Name must be at least 2 characters'
+    return false
+  }
+  if (trimmed.length > 100) {
+    errors.value.name = 'Name is too long (max 100 characters)'
+    return false
+  }
+  errors.value.name = ''
+  return true
+}
+
+const validateEmail = () => {
+  const trimmed = form.value.email.trim()
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+  if (!trimmed) {
+    errors.value.email = 'Email is required'
+    return false
+  }
+  if (!emailRegex.test(trimmed)) {
+    errors.value.email = 'Please enter a valid email address'
+    return false
+  }
+  errors.value.email = ''
+  return true
+}
+
+const validateMessage = () => {
+  const trimmed = form.value.message.trim()
+  if (!trimmed) {
+    errors.value.message = 'Message is required'
+    return false
+  }
+  if (trimmed.length < 10) {
+    errors.value.message = 'Message must be at least 10 characters'
+    return false
+  }
+  if (trimmed.length > 1000) {
+    errors.value.message = 'Message is too long (max 1000 characters)'
+    return false
+  }
+  errors.value.message = ''
+  return true
+}
+
+const isFormValid = computed(() => {
+  return validateName() && validateEmail() && validateMessage()
+})
+
+const validateField = (field) => {
+  if (field === 'name') validateName()
+  if (field === 'email') validateEmail()
+  if (field === 'message') validateMessage()
+}
+
+// Submit handler
 const handleSubmit = async () => {
-  if (!form.value.name || !form.value.email || !form.value.message) return
+  const nameValid = validateName()
+  const emailValid = validateEmail()
+  const messageValid = validateMessage()
+
+  if (!nameValid || !emailValid || !messageValid) {
+    return
+  }
 
   isLoading.value = true
   isSuccess.value = false
-  isError.value = false
+  isServerError.value = false
 
   try {
     const { error } = await supabase.functions.invoke('rapid-service', {
       body: {
-        name: form.value.name,
-        email: form.value.email,
-        message: form.value.message,
+        name: form.value.name.trim(),
+        email: form.value.email.trim(),
+        message: form.value.message.trim(),
       },
       headers: {
         Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
@@ -40,17 +116,18 @@ const handleSubmit = async () => {
 
     isSuccess.value = true
     form.value = { name: '', email: '', message: '' }
+    errors.value = { name: '', email: '', message: '' }
 
     setTimeout(() => {
       isSuccess.value = false
-    }, 5000)
+    }, 6000)
   } catch (err) {
-    console.error(err)
-    isError.value = true
+    console.error('Contact form submission failed:', err)
+    isServerError.value = true
 
     setTimeout(() => {
-      isError.value = false
-    }, 5000)
+      isServerError.value = false
+    }, 6000)
   } finally {
     isLoading.value = false
   }
@@ -82,7 +159,7 @@ const socialLinks = [
   <section class="py-24 min-h-dvh flex items-center justify-center bg-brand-white-secondary">
     <div class="w-full">
       <div class="section-grid-cols-2 gap-0 lg:gap-26 relative bg-brand-purple w-full">
-        <!-- Left Side -->
+        <!-- Left Side  -->
         <div
           class="pl-6 md:pl-16 lg:pl-10 xl:pl-24 py-16 flex flex-col justify-center items-start lg:items-end"
         >
@@ -122,7 +199,7 @@ const socialLinks = [
           </div>
         </div>
 
-        <!-- Right Side (Form) -->
+        <!-- Right Side-->
         <div
           class="lg:-my-16 bg-white shadow-xl px-6 lg:px-10 py-14 z-10 w-full lg:w-[85%] xl:w-[65%]"
           data-aos="fade-up"
@@ -146,7 +223,10 @@ const socialLinks = [
                 type="text"
                 placeholder=" "
                 id="name"
+                @input="validateField('name')"
+                @blur="validateField('name')"
                 class="peer w-full bg-transparent border-b border-gray-300 text-brand-black font-brand py-3 focus:outline-none focus:border-brand-purple transition-colors duration-300 placeholder-transparent"
+                :class="{ 'border-red-500 focus:border-red-500': errors.name }"
               />
               <label
                 for="name"
@@ -154,6 +234,9 @@ const socialLinks = [
               >
                 Enter your Name
               </label>
+              <p v-if="errors.name" class="text-red-500 text-xs mt-1 font-brand">
+                {{ errors.name }}
+              </p>
             </div>
 
             <!-- Email -->
@@ -163,7 +246,10 @@ const socialLinks = [
                 type="email"
                 placeholder=" "
                 id="email"
+                @input="validateField('email')"
+                @blur="validateField('email')"
                 class="peer w-full bg-transparent border-b border-gray-300 text-brand-black font-brand py-3 focus:outline-none focus:border-brand-purple transition-colors duration-300 placeholder-transparent"
+                :class="{ 'border-red-500 focus:border-red-500': errors.email }"
               />
               <label
                 for="email"
@@ -171,6 +257,9 @@ const socialLinks = [
               >
                 Enter a valid email address
               </label>
+              <p v-if="errors.email" class="text-red-500 text-xs mt-1 font-brand">
+                {{ errors.email }}
+              </p>
             </div>
 
             <!-- Message -->
@@ -180,7 +269,10 @@ const socialLinks = [
                 placeholder=" "
                 id="message"
                 rows="4"
+                @input="validateField('message')"
+                @blur="validateField('message')"
                 class="peer w-full bg-transparent border-b border-gray-300 text-brand-black font-brand py-3 focus:outline-none focus:border-brand-purple transition-colors duration-300 placeholder-transparent resize-none"
+                :class="{ 'border-red-500 focus:border-red-500': errors.message }"
               />
               <label
                 for="message"
@@ -188,6 +280,9 @@ const socialLinks = [
               >
                 Your Message
               </label>
+              <p v-if="errors.message" class="text-red-500 text-xs mt-1 font-brand">
+                {{ errors.message }}
+              </p>
             </div>
 
             <!-- Success Message -->
@@ -216,14 +311,14 @@ const socialLinks = [
               </div>
             </Transition>
 
-            <!-- Error Message -->
+            <!-- Server Error Message -->
             <Transition
               enter-active-class="transition-all duration-300"
               enter-from-class="opacity-0 -translate-y-2"
               enter-to-class="opacity-100 translate-y-0"
             >
               <div
-                v-if="isError"
+                v-if="isServerError"
                 class="flex items-center gap-2 bg-red-50 border border-red-200 rounded-xl px-4 py-3"
               >
                 <svg
@@ -237,7 +332,7 @@ const socialLinks = [
                   <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
                 <p class="text-red-600 font-brand text-sm">
-                  Something went wrong. Please try again.
+                  Something went wrong. Please try again later.
                 </p>
               </div>
             </Transition>
@@ -245,7 +340,7 @@ const socialLinks = [
             <!-- Submit Button -->
             <button
               class="group relative bg-brand-black text-white px-6 py-4 rounded-2xl font-normal font-brand cursor-pointer overflow-hidden transition-all duration-300 w-fit disabled:opacity-50 disabled:cursor-not-allowed"
-              :disabled="isLoading"
+              :disabled="isLoading || !isFormValid"
               @click="handleSubmit"
             >
               <span
@@ -270,7 +365,7 @@ const socialLinks = [
                     d="M7 17L17 7M17 7H7M17 7v10"
                   />
                 </svg>
-                <!-- Loading spinner -->
+                <!-- Loading   -->
                 <svg v-else class="w-4 h-4 animate-spin text-white" fill="none" viewBox="0 0 24 24">
                   <circle
                     class="opacity-25"
@@ -308,3 +403,15 @@ const socialLinks = [
     </div>
   </section>
 </template>
+
+<style scoped>
+/* Optional: smoother fade transition for messages */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.4s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>

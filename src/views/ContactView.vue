@@ -58,6 +58,9 @@ const socialLinks = [
         <span class="text-white font-brand text-sm">Get In Touch</span>
       </div>
       <h1 class="hero-heading leading-snug">Talk to Us</h1>
+      <p class="text-white/70 font-brand text-sm mt-2">
+        Whether you have a question or want to help, we’re here to listen.
+      </p>
     </div>
   </section>
 

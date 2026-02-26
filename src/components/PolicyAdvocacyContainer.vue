@@ -1,6 +1,6 @@
 <script setup>
 import PolicyAdvocacyItem from './PolicyAdvocacyItem.vue'
-import PolicyAdvocacyModelImg01 from '../assets/images/advocacy-sub-img-model-01.png'
+import PolicyAdvocacyModelImg01 from '../assets/images/advocacy-sub-img-model-01.jpg'
 import PolicyAdvocacyModelImg02 from '../assets/images/advocacy-sub-img-model-02.png'
 </script>
 <template>
