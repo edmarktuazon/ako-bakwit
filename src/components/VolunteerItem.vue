@@ -28,7 +28,7 @@ defineProps({
         </p>
       </div>
 
-      <div class="section-grid-cols-4 gap-10 max-w-7xl mx-auto">
+      <div class="section-grid-cols-3 gap-10 max-w-4xl mx-auto">
         <div
           v-for="partner in partners"
           :key="partner.alt"

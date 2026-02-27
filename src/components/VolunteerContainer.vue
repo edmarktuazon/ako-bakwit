@@ -3,7 +3,7 @@ import VolunteerItem from './VolunteerItem.vue'
 import JLBGLogo from '@/assets/images/jollibee-group.png'
 import RAHPLogo from '@/assets/images/rahp.png'
 import DSWDLogo from '@/assets/images/dswd.png'
-import BDOLogo from '@/assets/images/bdo.png'
+// import BDOLogo from '@/assets/images/bdo.png'
 </script>
 <template>
   <VolunteerItem
@@ -26,12 +26,12 @@ import BDOLogo from '@/assets/images/bdo.png'
         description:
           'The Department of Social Welfare and Development has been generous in accepting our recommendations to conduct feeding programs in various transitory shelters and urban poor communities.',
       },
-      {
-        logo: BDOLogo,
-        alt: 'BDO',
-        description:
-          'In September 2024, BDO Foundation partnered with Ako Bakwit, along with Angat Bataan Damayan and the Philippine Navy, to distribute food packs to over 4,400 families affected by the MT Terra Nova oil spill in Bataan and Cavite.',
-      },
+      // {
+      //   logo: BDOLogo,
+      //   alt: 'BDO',
+      //   description:
+      //     'In September 2024, BDO Foundation partnered with Ako Bakwit, along with Angat Bataan Damayan and the Philippine Navy, to distribute food packs to over 4,400 families affected by the MT Terra Nova oil spill in Bataan and Cavite.',
+      // },
     ]"
   >
     <template #section-heading>Bahagi sa Bakwit – Fight against hunger</template>

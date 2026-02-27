@@ -56,7 +56,7 @@ const swiperBreakpoints = {
             <slot name="sub-description-01"></slot>
           </p>
 
-          <hr class="border-white/10 max-w-[87%] w-full mx-auto my-8" />
+          <hr class="border-white/10 w-full mx-auto my-8" />
 
           <h3
             class="text-white font-semibold font-brand text-3xl mb-4"
@@ -69,7 +69,7 @@ const swiperBreakpoints = {
             <slot name="sub-description-02"></slot>
           </p>
 
-          <hr class="border-white/10 max-w-[87%] w-full mx-auto my-8" />
+          <hr class="border-white/10 w-full mx-auto my-8" />
 
           <h3
             class="text-white font-semibold font-brand text-3xl mb-4"

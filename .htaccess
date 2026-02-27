@@ -1,0 +1,6 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^akobakwit\.com$ [NC]
+RewriteRule ^ https://akobakwit.com%{REQUEST_URI} [L,R=301]
+</IfModule>

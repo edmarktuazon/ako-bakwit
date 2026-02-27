@@ -9,7 +9,7 @@
       <div class="heading-underline"></div>
     </div>
     <div class="section-grid-cols-2 items-start">
-      <div class="flex flex-col">
+      <div class="flex flex-col row-end-3 lg:row-end-auto">
         <p class="text-brand-black font-brand leading-relaxed text-base text-justify">
           <slot name="sub-description-01"></slot>
         </p>

@@ -64,7 +64,7 @@ onUnmounted(() => {
       >
         <div class="space-y-4">
           <h1
-            class="hero-heading leading-snug text-justify"
+            class="hero-heading leading-snug"
             data-aos="fade-zoom-in"
             data-aos-easing="ease-in-back"
             data-aos-offset="0"
@@ -73,7 +73,7 @@ onUnmounted(() => {
           </h1>
 
           <div class="w-4/5 mb-6">
-            <p class="text-white text-base font-brand leading-relaxed text-justify">
+            <p class="text-white text-base font-brand leading-relaxed">
               {{ description }}
             </p>
           </div>

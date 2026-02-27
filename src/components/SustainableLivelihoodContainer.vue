@@ -25,7 +25,7 @@ import SustainableLivelihoodModelImg04 from '../assets/images/sustainable-liveli
     </template>
 
     <template #sustainable-livelihood-img-model>
-      <div class="space-y-5 md:space-y-7">
+      <div class="space-y-6 md:space-y-8">
         <div
           class="overflow-hidden rounded-2xl shadow-xl"
           data-aos="zoom-out"
@@ -34,48 +34,47 @@ import SustainableLivelihoodModelImg04 from '../assets/images/sustainable-liveli
         >
           <img
             :src="SustainableLivelihoodModelImg01"
-            alt="Main sustainable livelihood activity"
-            class="w-full aspect-[5/3] md:aspect-[21/9] object-cover"
+            alt="DTI livelihood training with sewing machines and participants"
+            class="w-full aspect-[4/3] sm:aspect-[16/9] object-cover"
             loading="lazy"
           />
         </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 md:gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
           <div
-            class="overflow-hidden rounded-xl shadow-lg aspect-[4/3]"
-            data-aos="zoom-out"
-            data-aos-easing="ease-in"
-            data-aos-delay="300"
+            class="overflow-hidden rounded-xl shadow-lg aspect-[4/3] sm:aspect-[3/2]"
+            data-aos="fade-up"
+            data-aos-delay="200"
           >
             <img
               :src="SustainableLivelihoodModelImg02"
-              alt="Activity 1"
+              alt="Photographer capturing livelihood event"
               class="w-full h-full object-cover transition hover:scale-105 duration-300"
               loading="lazy"
             />
           </div>
+
           <div
-            class="overflow-hidden rounded-xl shadow-lg aspect-[4/3]"
-            data-aos="zoom-out"
-            data-aos-easing="ease-in"
-            data-aos-delay="500"
+            class="overflow-hidden rounded-xl shadow-lg aspect-[4/3] sm:aspect-[3/2]"
+            data-aos="fade-up"
+            data-aos-delay="300"
           >
             <img
               :src="SustainableLivelihoodModelImg03"
-              alt="Activity 2"
+              alt="Audience attending community training session"
               class="w-full h-full object-cover transition hover:scale-105 duration-300"
               loading="lazy"
             />
           </div>
+
           <div
-            class="overflow-hidden rounded-xl shadow-lg aspect-[5/3] lg:aspect-[4/3] block col-span-2 lg:col-span-1"
-            data-aos="zoom-out"
-            data-aos-easing="ease-in"
-            data-aos-delay="700"
+            class="overflow-hidden rounded-xl shadow-lg aspect-[4/3] sm:aspect-[3/2]"
+            data-aos="fade-up"
+            data-aos-delay="400"
           >
             <img
               :src="SustainableLivelihoodModelImg04"
-              alt="Activity 3"
+              alt="Negosyo Cart distribution with community members"
               class="w-full h-full object-cover transition hover:scale-105 duration-300"
               loading="lazy"
             />
