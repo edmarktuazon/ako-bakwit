@@ -15,7 +15,10 @@ import PolicyAdvocacyModelImg02 from '../assets/images/advocacy-sub-img-model-02
       The Philippines is still waiting for a comprehensive national law on IDP rights protection.
       Legislative efforts are ongoing in Congress to establish a unified framework. Ako Bakwit
       collaborates with organizations like UNHCR and the Philippine Legislators Committee on
-      Population and Development.
+      Population and Development. <br />
+      <br />
+      Ako Bakwit collaborates with organizations like UNHCR, Commission on Human Rights of the
+      Philippines, and the Philippine Legislators Committee on Population and Development.
     </template>
 
     <template #advocacy-policy-model-img-01>

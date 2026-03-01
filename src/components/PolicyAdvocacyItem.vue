@@ -25,7 +25,7 @@
             <slot name="advocacy-policy-model-img-02"></slot>
           </div>
           <div class="p-10 lg:p-12">
-            <p class="text-white font-brand font-semibold text-3xl leading-snug">
+            <p class="text-white font-brand font-semibold text-2xl leading-snug">
               <slot name="sub-description"></slot>
             </p>
           </div>

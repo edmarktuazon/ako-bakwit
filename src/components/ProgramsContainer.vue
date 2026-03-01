@@ -4,7 +4,7 @@ import ProgramModelImg from '../assets/images/program-sub-img-model.png'
 </script>
 <template>
   <ProgramsItem>
-    <template #section-heading>Our Program</template>
+    <template #section-heading>Our Programs</template>
 
     <template #sub-heading-01>What We Do</template>
     <template #sub-description-01>

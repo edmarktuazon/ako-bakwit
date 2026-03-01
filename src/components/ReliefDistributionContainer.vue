@@ -15,7 +15,7 @@ import BDOLogo from '../assets/images/bdo-logo-with-bg.png'
         />
         <span class="underline" data-aos="fade-in" data-aos-delay="300"
           >Relief Distribution <br />
-          Partner: BDO Foundation.</span
+          Partner: BDO Foundation</span
         >
       </div>
       During a calamity is a critical, time-sensitive operation that involves mobilizing resources,

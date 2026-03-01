@@ -43,3 +43,6 @@ __screenshots__/
 # Env files
 .env
 .env.*.local
+
+# htaccess
+.htaccess
